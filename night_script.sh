@@ -1,10 +1,13 @@
 #!/bin/bash -e
 
 DIR=$(dirname $0)
-
 B=${DIR}/broadlink-cli
+SLEEP_CMD="sleep 1m"
 
-IP=10.100.102.12
+# debug
+if [[ -n ${DEBUG} ]] ; then
+	SLEEP_CMD="break"
+fi
 
 setup() {
 	${B}/broadlink_discovery | tail -n3 | head -n1 > ${DIR}/device_config
@@ -21,7 +24,7 @@ msleep() {
 	log "Sleeping for ${amount} minutes"
 	while [[ ${i} -lt ${amount} ]] ; do
 		echo -n .
-		sleep 1m
+		${SLEEP_CMD}
 		let i++ || :
 	done
 	echo
