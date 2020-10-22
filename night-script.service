@@ -1,0 +1,9 @@
+[Unit]
+Description=Night Script
+
+[Service]
+EnvironmentFile=/etc/default/night_script
+ExecStart=@SCRIPT_PATH@
+
+[Install]
+WantedBy=multi-user.target

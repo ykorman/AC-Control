@@ -1,3 +1,4 @@
 env/
 device_config
 *.swp
+.*
