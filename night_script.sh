@@ -62,7 +62,7 @@ main() {
 	while true ; do
 		# turn ac on
 		log "Turning AC on (26 degrees)"
-		cmd @${DIR}/cmds/ac.26
+		cmd @${DIR}/cmds/ac_hot.26
 		msleep ${TIMER_ON} "on"
 		log "Turning AC off"
 		cmd @${DIR}/cmds/ac.off
