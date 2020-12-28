@@ -13,5 +13,8 @@ uninstall:
 	sudo systemctl disable $(SRV)
 	sudo rm -f $(SERVICE_DIR)/$(SRV) $(ENV)
 
+webdbg:
+	FLASK_ENV=development FLASK_APP=app.py flask run --host=0.0.0.0
+
 
 .PHONY: install uninstall
